@@ -40,5 +40,7 @@ public class Main {
         System.out.println(fractions.getR(fraction1,fraction2,fraction3));
         System.out.println(fractions.getOneShareR(fraction1,fraction2,fraction3));
 
+        System.out.println(fractions.getAdditionFractions(fraction1,fraction2));
+
     }
 }

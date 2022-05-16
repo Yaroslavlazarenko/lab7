@@ -23,6 +23,7 @@ public class Fractions {
     }
 
     public Fraction getFraction(int index) {
+        Untiled.properFraction(this.R);
         return this.fractions[index];
     }
 
@@ -34,6 +35,7 @@ public class Fractions {
         tempNumerator = fraction1.getNumerator() * (tempDenominator / fraction1.getDenominator()) +
                 fraction2.getNumerator() * (tempDenominator / fraction2.getDenominator());
         this.fractionAddition = new Fraction(tempNumerator, tempDenominator);
+        Untiled.properFraction(this.fractionAddition);
     }
 
     public Fraction getAdditionFractions(Fraction fraction1, Fraction fraction2) {
@@ -49,6 +51,7 @@ public class Fractions {
         tempNumerator = fraction1.getNumerator() * (tempDenominator / fraction1.getDenominator()) -
                 fraction2.getNumerator() * (tempDenominator / fraction2.getDenominator());
         this.fractionSubtraction = new Fraction(tempNumerator, tempDenominator);
+        Untiled.properFraction(this.fractionSubtraction);
     }
 
     public Fraction getFractionSubtraction(Fraction fraction1, Fraction fraction2) {
@@ -60,6 +63,7 @@ public class Fractions {
         double tempNumerator = fraction1.getNumerator() * fraction2.getNumerator();
         double tempDenominator = fraction1.getDenominator() * fraction2.getDenominator();
         this.fractionMultiplication = new Fraction(tempNumerator, tempDenominator);
+        Untiled.properFraction(this.fractionMultiplication);
     }
 
     public Fraction getFractionMultiplication(Fraction fraction1, Fraction fraction2) {
@@ -69,21 +73,30 @@ public class Fractions {
 
     public void R(Fraction fraction1, Fraction fraction2, Fraction fraction3) {
         this.R = getFractionMultiplication(getAdditionFractions(fraction1, fraction2), getFractionSubtraction(fraction1, fraction3));
+        Untiled.properFraction(this.R);
     }
 
     public String getR(Fraction fraction1, Fraction fraction2, Fraction fraction3) {
         R(fraction1,fraction2,fraction3);
+        if(this.R.getNumerator()==0)
+            return "R = 0";
         return "\nR = \n" + this.R;
     }
 
     public String getOneShareR(Fraction fraction1, Fraction fraction2, Fraction fraction3) {
         R(fraction1, fraction2, fraction3);
+        Untiled.properFraction(this.R);
+        if(this.R.getNumerator()==0)
+            return "1/R = N/A";
         return "\n1/R = \n" + this.R.getDenominator() + "\n-----\n" + this.R.getNumerator();
     }
 
-    public double commonDivisor(double n1, double n2) {
-        if (n2 == 0)
-            return n1;
-        return commonDivisor(n2, n1 % n2);
+    public static double findMinDivider(double Numberator, double Denominator) {
+        if (Denominator == 0)
+            return Numberator;
+        return findMinDivider(Denominator, Numberator % Denominator);
+    }
+    public static double commonDivisor(double Numberator, double Denominator) {
+        return Numberator / findMinDivider(Numberator, Denominator) * Denominator;
     }
 }

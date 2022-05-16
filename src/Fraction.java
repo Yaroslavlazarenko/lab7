@@ -1,14 +1,22 @@
 public class Fraction {
-    private final double numerator;
-    private final double denominator;
+    private double numerator;
+    private double denominator;
 
     public Fraction(double numerator, double denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
     }
 
+    public void setNumerator(double numerator){
+        this.numerator = numerator;
+    }
+
     public double getNumerator() {
         return this.numerator;
+    }
+
+    public void setDenominator(double denominator){
+        this.denominator = denominator;
     }
 
     public double getDenominator() {
