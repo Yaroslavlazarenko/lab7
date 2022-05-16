@@ -7,7 +7,7 @@ public class Fraction {
         this.denominator = denominator;
     }
 
-    public void setNumerator(double numerator){
+    public void setNumerator(double numerator) {
         this.numerator = numerator;
     }
 
@@ -15,7 +15,7 @@ public class Fraction {
         return this.numerator;
     }
 
-    public void setDenominator(double denominator){
+    public void setDenominator(double denominator) {
         this.denominator = denominator;
     }
 
@@ -23,10 +23,10 @@ public class Fraction {
         return this.denominator;
     }
 
-    public String getReverseFraction(Fraction fraction){
+    public String getReverseFraction(Fraction fraction) {
         double tempNumerator = fraction.getDenominator();
         double tempDenominator = fraction.getNumerator();
-        return tempNumerator +"\n-----\n"+tempDenominator;
+        return tempNumerator + "\n-----\n" + tempDenominator;
     }
 
     @Override

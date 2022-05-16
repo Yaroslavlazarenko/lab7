@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Fractions {
     private final Fraction[] fractions;
     private int index;
@@ -13,7 +11,7 @@ public class Fractions {
         index = -1;
     }
 
-    public Fractions(Fraction ... fractions) {
+    public Fractions(Fraction... fractions) {
         this.fractions = fractions;
     }
 
@@ -77,8 +75,8 @@ public class Fractions {
     }
 
     public String getR(Fraction fraction1, Fraction fraction2, Fraction fraction3) {
-        R(fraction1,fraction2,fraction3);
-        if(this.R.getNumerator()==0)
+        R(fraction1, fraction2, fraction3);
+        if (this.R.getNumerator() == 0)
             return "R = 0";
         return "\nR = \n" + this.R;
     }
@@ -86,7 +84,7 @@ public class Fractions {
     public String getOneShareR(Fraction fraction1, Fraction fraction2, Fraction fraction3) {
         R(fraction1, fraction2, fraction3);
         Untiled.properFraction(this.R);
-        if(this.R.getNumerator()==0)
+        if (this.R.getNumerator() == 0)
             return "1/R = N/A";
         return "\n1/R = \n" + this.R.getDenominator() + "\n-----\n" + this.R.getNumerator();
     }
@@ -96,6 +94,7 @@ public class Fractions {
             return Numberator;
         return findMinDivider(Denominator, Numberator % Denominator);
     }
+
     public static double commonDivisor(double Numberator, double Denominator) {
         return Numberator / findMinDivider(Numberator, Denominator) * Denominator;
     }
