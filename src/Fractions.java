@@ -72,12 +72,13 @@ public class Fractions {
     }
 
     public String getR(Fraction fraction1, Fraction fraction2, Fraction fraction3) {
-        return "R = " + this.R;
+        R(fraction1,fraction2,fraction3);
+        return "\nR = \n" + this.R;
     }
 
     public String getOneShareR(Fraction fraction1, Fraction fraction2, Fraction fraction3) {
         R(fraction1, fraction2, fraction3);
-        return "1/R = " + this.R.getDenominator() + "\n------\n" + this.R.getNumerator();
+        return "\n1/R = \n" + this.R.getDenominator() + "\n-----\n" + this.R.getNumerator();
     }
 
     public double commonDivisor(double n1, double n2) {
