@@ -12,7 +12,7 @@ public class Untiled {
         double tempDenominator = fraction.getDenominator();
 
         double minNumberPlusOne = Math.min(tempNumerator, tempDenominator) + 1;
-        for (int i = 2; i < minNumberPlusOne; i++) {
+        for (double i = minNumberPlusOne < 0 ? minNumberPlusOne - 1 : 2; i < Math.abs(minNumberPlusOne); i++) {
             if (tempNumerator % i == 0 && tempDenominator % i == 0) {
                 fraction.setNumerator(tempNumerator / i);
                 fraction.setDenominator(tempDenominator / i);
