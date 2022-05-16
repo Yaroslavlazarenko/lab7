@@ -15,6 +15,12 @@ public class Fraction {
         return this.denominator;
     }
 
+    public String getReverseFraction(Fraction fraction){
+        double tempNumerator = fraction.getDenominator();
+        double tempDenominator = fraction.getNumerator();
+        return tempNumerator +"\n-----\n"+tempDenominator;
+    }
+
     @Override
     public String toString() {
         return this.numerator + "\n-----\n" + this.denominator;
